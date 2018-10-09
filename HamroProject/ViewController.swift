@@ -42,12 +42,12 @@ let isuservala = newSqlManager.userLogin(email: "b", password: "b")
     }
     
     @IBAction func addevent(_ sender: Any) {
-        let email =  "d"
+        let email =  "b"
         let doesEmailExists = newSqlManager.checkIfEmailisAlreadyThere(email: email)
         if doesEmailExists {
             print("email already there please choose different one ")
         } else {
-            newSqlManager.putUserData(firstName: "d", lastName: "d", userName: "d", email: email, password: "d")
+            newSqlManager.putUserData(firstName: "b", lastName: "b", userName: "b", email: email, password: "b")
             
         }
 

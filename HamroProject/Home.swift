@@ -33,7 +33,7 @@ class Home: UIViewController {
     @IBAction func addEventButton(_ sender: Any) {
         
                 if userId != nil {
-                    newSqlManager.putEventData(title: "d", description: "d", userId: userId!, location: "d", date: "d")
+                    newSqlManager.putEventData(title: "b", description: "b", userId: userId!, location: "b", date: "b")
                 }
                 else {
                     print("there is no userid so cannnot save the event data ")
@@ -55,8 +55,7 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
-        cell.detailTextLabel?.text = userCreatedEventsArray[indexPath.row].userId
-        cell.textLabel?.text = userCreatedEventsArray[indexPath.row].eventId
+        cell.textLabel?.text = userCreatedEventsArray[indexPath.row].eventDescrip
         return cell
     }
     

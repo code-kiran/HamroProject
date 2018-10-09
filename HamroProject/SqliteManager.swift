@@ -109,11 +109,6 @@ class SqlManager {
                 isUserVaild = true
                 let userIdtoStore  = String(cString: sqlite3_column_text(stmt, 0))
                 UserDefaults.standard.set(userIdtoStore, forKey: "userId")
-                print(email)
-                print(password)
-                print(userIdtoStore)
-                print(String(cString: sqlite3_column_text(stmt, 0)))
-
             }
             else {
                 isUserVaild = false
@@ -154,7 +149,7 @@ class SqlManager {
     
     func putEventData(title: String, description: String, userId: String, location: String, date: String) {
         createDatabase()
-        let updateStatementString = "INSERT INTO Events ( EventTitle, EventDescription, EventLocation, Date, UserId) VALUES (\"\(title)\",\"\(description)\",\"\(userId)\",\"\(location)\",\"\(date)\");"
+        let updateStatementString = "INSERT INTO Events ( EventTitle, EventDescription, EventLocation, Date, UserId) VALUES (\"\(title)\",\"\(description)\",\"\(location)\",\"\(date)\",\"\(userId)\");"
         print(updateStatementString)
         var updateStatement: OpaquePointer? = nil
         
@@ -201,7 +196,7 @@ class SqlManager {
         createDatabase()
         var userCreatedEvent = [EventModel]()
         var stmt:OpaquePointer?
-        let queryString = "SELECT * FROM Events WHERE EventLocation = '\(userId)';"
+        let queryString = "SELECT * FROM Events WHERE UserId = '\(userId)';"
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
