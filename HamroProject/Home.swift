@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class Home: UIViewController {
     @IBOutlet weak var homeTable: UITableView!
@@ -21,6 +22,8 @@ class Home: UIViewController {
         userId = UserDefaults.standard.string(forKey: "userId")
         userCreatedEventsArray = newSqlManager.getEventDataFromSpecificUser(userId: userId!)
         homeTable.reloadData()
+        UNUserNotificationCenter.current().delegate = self
+      //  addNotification()
       
      
     }
@@ -31,9 +34,12 @@ class Home: UIViewController {
     }
 
     @IBAction func addEventButton(_ sender: Any) {
-        
                 if userId != nil {
-                    newSqlManager.putEventData(title: "b", description: "b", userId: userId!, location: "b", date: "b")
+                    let title = "Musical Event"
+                    let desc = "hy this is new event description about musical event"
+                    newSqlManager.putEventData(title: title, description: desc, userId: userId!, location: "b", date: "b")
+                    addNotification(userId: userId!, title: title, desc: desc)
+                    
                 }
                 else {
                     print("there is no userid so cannnot save the event data ")
@@ -42,10 +48,40 @@ class Home: UIViewController {
     
     @IBAction func logoutButton(_ sender: Any) {
     //   navigationController?.popToRootViewController(animated: true)
-      
+    }
+    
+    func addNotification(userId: String, title: String, desc: String) {
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "user with id: \(userId) added \(title)"
+        content.body = desc
+        content.sound = UNNotificationSound.default
+        content.categoryIdentifier = "yourIdentifier"
+        content.userInfo = ["example": "information"] // You can retrieve this when displaying notification
+        
+        // Setup trigger time
+//        var calendar = Calendar.current
+//        calendar.timeZone = TimeZone.current
+       // let testDate = Date() + 5 // Set this to whatever date you need
+     //   let trigger = UNCalendarNotificationTrigger(dateMatching: testDate, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3.0, repeats: false)
+        
+        // Create request
+        let uniqueID = UUID().uuidString // Keep a record of this if necessary
+        let request = UNNotificationRequest(identifier: uniqueID, content: content, trigger: trigger)
+        center.add(request) { (error) in
+            if error != nil {
+                print("error ")
+            }
+        }
     }
     
     
+}
+extension Home: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound, .badge])
+    }
 }
 
 extension Home: UITableViewDelegate, UITableViewDataSource {
