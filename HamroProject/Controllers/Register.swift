@@ -33,8 +33,8 @@ class Register: UIViewController {
     
     @IBAction func signUpButton(_ sender: Any) {
         
-        if fullNameTextField.text!.isEmpty || userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
-            ErrorReporting.showMessage(title: "Register Unsuccessfull", msg: "SomeTextField seems Empty  Please fill the form Correctly")
+        if fullNameTextField.text!.isEmpty || userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty || passwordTextField.text! != conformPasswordTextField.text!  {
+            ErrorReporting.showMessage(title: "Register Unsuccessfull", msg: "Something wrong with the inputs  Please fill the form Correctly . All the forms should be filled")
         } else {
             newSqlManager.createDatabase()
             let email =  emailTextField.text
