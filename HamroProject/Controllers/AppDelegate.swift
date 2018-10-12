@@ -13,6 +13,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var islogin = 0
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -25,22 +26,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //                print("authorization successful")
         //            }
         //        }
-//        if UserDefaults.standard.string(forKey: "userEmail")
-//            == nil {
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! Login
-//            let navigationController = UINavigationController(rootViewController: newViewController)
-//            let appdelegate = UIApplication.shared.delegate as! AppDelegate
-//            appdelegate.window!.rootViewController = navigationController
-//            
-//            
-//        } else {
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-//            let navigationController = UINavigationController(rootViewController: newViewController)
-//            let appdelegate = UIApplication.shared.delegate as! AppDelegate
-//            appdelegate.window!.rootViewController = navigationController
-//        }
+      //  if UserDefaults.standard.string(forKey: "userEmail")
+         //   == nil {
+   /*
+        if islogin == 1{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! Login
+            let navigationController = UINavigationController(rootViewController: newViewController)
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+            appdelegate.window!.rootViewController = navigationController
+            
+            
+        } else {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
+            let navigationController = UINavigationController(rootViewController: newViewController)
+            let appdelegate = UIApplication.shared.delegate as! AppDelegate
+            appdelegate.window!.rootViewController = navigationController
+        }
+ */
         
         return true
         

@@ -27,7 +27,8 @@ class AddEvent: UIViewController {
     @IBAction func creatEventButton(_ sender: Any) {
         if userId != nil {
             newSqlManager.putEventData(title: eventTitle.text!, description: eventDescription.text!, userId: userId!, location: eventLocation.text!, date: "date")
-        }
+            _ = navigationController?.popViewController(animated: true)
+                    }
         else {
             print("there is no userid so cannnot save the event data ")
         }

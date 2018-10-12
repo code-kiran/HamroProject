@@ -46,5 +46,8 @@ class Register: UIViewController {
         
     }
     
+    @IBAction func closeBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
 }

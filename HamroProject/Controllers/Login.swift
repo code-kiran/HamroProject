@@ -15,8 +15,6 @@ class Login: UIViewController {
     @IBOutlet weak var loginViewTitleLable: UILabel!
     let newSqlManager = SqlManager()
     
-  
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +30,7 @@ class Login: UIViewController {
           newSqlManager.createDatabase()
         let isuservalid = newSqlManager.userLogin(email: emailTextField.text!, password: passwordTextField.text!)
         if isuservalid == true {
-            UserDefaults.standard.set(emailTextField.text!, forKey: "userEmail")
+            UserDefaults.standard.set(true, forKey: "islogin")
            navigateToTabBar()
             print("login successful")
             

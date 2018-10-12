@@ -219,33 +219,6 @@ class SqlManager {
         return userCreatedEvent
     }
     
-    func getDataFromUsers()-> [EventModel] {
-        createDatabase()
-        var userCreatedEvents = [EventModel]()
-        var stmt:OpaquePointer?
-        let queryString = "SELECT * FROM Events;"
-        
-        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error preparing insert: \(errmsg)")
-            return userCreatedEvents
-        }
-        
-        while(sqlite3_step(stmt) == SQLITE_ROW){
-            let userCreatedDict:NSDictionary = [
-                "eventId" : String(cString: sqlite3_column_text(stmt, 0)),
-                "eventTitle" : String(cString: sqlite3_column_text(stmt, 1)),
-                "eventDescription" : String(cString: sqlite3_column_text(stmt, 2)),
-                "eventLocation" : String(cString: sqlite3_column_text(stmt, 3)),
-                "userId" : String(cString: sqlite3_column_text(stmt, 4))
-                
-            ]
-            userCreatedEvents.append(EventModel(event: userCreatedDict ))
-        }
-        return userCreatedEvents
-    }
-    
-
     
     }
     
