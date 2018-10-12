@@ -14,6 +14,7 @@ class EventModel {
     var eventDescrip: String?
     var eventLocation: String?
     var userId: String?
+    var userName: String?
     
     init(event: NSDictionary) {
         self.eventId = event["eventId"] as? String
@@ -21,6 +22,7 @@ class EventModel {
         self.eventDescrip = event["eventDescription"] as? String
         self.eventLocation = event["eventLocation"] as? String
         self.userId = event["userId"] as? String
+        self.userName = event["userName"] as? String
         
 }
     

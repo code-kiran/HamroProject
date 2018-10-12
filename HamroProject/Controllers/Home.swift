@@ -27,7 +27,9 @@ class Home: UIViewController {
         homeTable.delegate = self
         homeTable.dataSource = self
         getData(fromUrl: baseUrl)
-    }
+        navigationItem.title = UserDefaults.standard.value(forKey: "userName") as? String
+          self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]
+            }
     
     func getData(fromUrl: String) {
         Alamofire.request(fromUrl, method: .post, parameters: token, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in

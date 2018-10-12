@@ -24,7 +24,16 @@ class PrivateEvent: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tbl.delegate = self
-        tbl.dataSource = self     
+        tbl.dataSource = self
+        
+    self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
     }
     
     
@@ -40,6 +49,8 @@ override func viewWillAppear(_ animated: Bool) {
         }
     }
     
+
+    
 }
 
 extension PrivateEvent: UITableViewDelegate, UITableViewDataSource {
@@ -51,7 +62,7 @@ extension PrivateEvent: UITableViewDelegate, UITableViewDataSource {
            let eventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? EventCell
             eventCell?.eventTitleLable.text = userCreatedEventsArray[indexPath.row].eventName
             eventCell?.eventDescLable.text = userCreatedEventsArray[indexPath.row].eventDescrip
-            eventCell?.eventCreatedByLable.text = userCreatedEventsArray[indexPath.row].userId
+            eventCell?.eventCreatedByLable.text = userCreatedEventsArray[indexPath.row].eventLocation
               return eventCell!
       
     }

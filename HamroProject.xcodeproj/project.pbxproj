@@ -27,6 +27,7 @@
 		9FD054582170BE5500699385 /* APIEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD054572170BE5500699385 /* APIEventModel.swift */; };
 		9FD0545B2170BEFA00699385 /* ImageCacheExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0545A2170BEFA00699385 /* ImageCacheExtension.swift */; };
 		9FD0545D2170C43F00699385 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0545C2170C43F00699385 /* ActivityIndicator.swift */; };
+		9FD054602170CFB900699385 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD0545F2170CFB900699385 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9FD054572170BE5500699385 /* APIEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEventModel.swift; sourceTree = "<group>"; };
 		9FD0545A2170BEFA00699385 /* ImageCacheExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheExtension.swift; sourceTree = "<group>"; };
 		9FD0545C2170C43F00699385 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		9FD0545F2170CFB900699385 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		CAE55E6CBF453F0861BD1D69 /* Pods-HamroProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamroProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-HamroProject/Pods-HamroProject.release.xcconfig"; sourceTree = "<group>"; };
 		ECC74AD3DA410F22DA2B9565 /* Pods-HamroProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HamroProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HamroProject/Pods-HamroProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 		9FBFFC2A216C4427005DAD88 /* HamroProject */ = {
 			isa = PBXGroup;
 			children = (
+				9FD0545E2170CFA300699385 /* Alerts */,
 				9FD054592170BEE000699385 /* Extension */,
 				9F9B2AD3216F28D60034D213 /* SqLiteManager */,
 				9F9B2AD1216F289C0034D213 /* Views */,
@@ -169,6 +172,14 @@
 				9FD0545C2170C43F00699385 /* ActivityIndicator.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9FD0545E2170CFA300699385 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				9FD0545F2170CFB900699385 /* Alerts.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				9F9B2ACF216F1A480034D213 /* Register.swift in Sources */,
 				9FBFFC43216C48FC005DAD88 /* UserModel.swift in Sources */,
 				9F9B2ADB216FB1270034D213 /* EventCell.swift in Sources */,
+				9FD054602170CFB900699385 /* Alerts.swift in Sources */,
 				9FD054562170BDA200699385 /* APIEventCell.swift in Sources */,
 				9FD054542170B1C100699385 /* AllEventCell.swift in Sources */,
 				9FBFFC2C216C4427005DAD88 /* AppDelegate.swift in Sources */,

@@ -32,18 +32,22 @@ class Register: UIViewController {
     }
     
     @IBAction func signUpButton(_ sender: Any) {
-        newSqlManager.createDatabase()
-        let email =  emailTextField.text
-        let doesEmailExists = newSqlManager.checkIfEmailisAlreadyThere(email: email!)
-        if doesEmailExists {
-            print("email already there please choose different one ")
+        
+        if fullNameTextField.text!.isEmpty || userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            ErrorReporting.showMessage(title: "Register Unsuccessfull", msg: "SomeTextField seems Empty  Please fill the form Correctly")
         } else {
-            newSqlManager.putUserData(firstName: fullNameTextField.text!, lastName: "b", userName: userNameTextField.text!, email: email!, password: passwordTextField.text!)
-            dismiss(animated: true, completion: nil)
-                        
+            newSqlManager.createDatabase()
+            let email =  emailTextField.text
+            let doesEmailExists = newSqlManager.checkIfEmailisAlreadyThere(email: email!)
+            if doesEmailExists {
+                ErrorReporting.showMessage(title: "Invalid Email", msg: "Email Already Exist ")
+            } else {
+                newSqlManager.putUserData(firstName: fullNameTextField.text!, lastName: "b", userName: userNameTextField.text!, email: email!, password: passwordTextField.text!)
+                dismiss(animated: true, completion: nil)
+                //  ErrorReporting.showMessage(title: "Regristration Successful! ", msg: "You can now login")
+                
+            }
         }
-        
-        
     }
     
     @IBAction func closeBtn(_ sender: Any) {

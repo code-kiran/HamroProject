@@ -33,7 +33,7 @@ class SqlManager {
         
         // Create table for Events
         
-        if sqlite3_exec(db, "CREATE TABLE  IF NOT EXISTS Events (Id INTEGER PRIMARY KEY AUTOINCREMENT, EventTitle TEXT, EventDescription TEXT, EventLocation TEXT, Date TEXT, UserId TEXT)", nil, nil, nil) != SQLITE_OK {
+        if sqlite3_exec(db, "CREATE TABLE  IF NOT EXISTS Events (Id INTEGER PRIMARY KEY AUTOINCREMENT, EventTitle TEXT, EventDescription TEXT, EventLocation TEXT, Date TEXT, UserId TEXT, UserName TEXT)", nil, nil, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error creating table: \(errmsg)")
             return
@@ -92,6 +92,23 @@ class SqlManager {
         return userData
     }
     
+    
+//    func getUsernameFromUserId(userId: String) -> String {
+//           var stmt:OpaquePointer?
+//        var username: String?
+//        createDatabase()
+//        let queryString = "SELECT FirstName FROM Users WHERE Id = \(userId);"
+//
+//        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
+//            let errmsg = String(cString: sqlite3_errmsg(db)!)
+//            print("error preparing insert: \(errmsg)")
+//        }
+//        while(sqlite3_step(stmt) == SQLITE_ROW) {
+//            username = String(cString: sqlite3_column_text(stmt, 2))
+//            }
+//        return username!
+//    }
+    
     //login
     
     func userLogin(email: String, password: String) -> Bool{
@@ -109,7 +126,9 @@ class SqlManager {
                 password ==  String(cString: sqlite3_column_text(stmt, 5)) {
                 isUserVaild = true
                 let userIdtoStore  = String(cString: sqlite3_column_text(stmt, 0))
+                let usernameToStore  = String(cString: sqlite3_column_text(stmt, 3))
                 UserDefaults.standard.set(userIdtoStore, forKey: "userId")
+                UserDefaults.standard.set(usernameToStore, forKey: "userName")
             }
             else {
                 isUserVaild = false
@@ -119,7 +138,7 @@ class SqlManager {
         return isUserVaild
     }
     
-    //check email
+    //check email if it is already there
     
     func checkIfEmailisAlreadyThere(email: String) ->Bool {
         createDatabase()
@@ -148,9 +167,9 @@ class SqlManager {
     
     //MARK: - FOR EVENTS DATA
     
-    func putEventData(title: String, description: String, userId: String, location: String, date: String) {
+    func putEventData(title: String, description: String, userId: String, location: String, date: String, userName: String) {
         createDatabase()
-        let updateStatementString = "INSERT INTO Events ( EventTitle, EventDescription, EventLocation, Date, UserId) VALUES (\"\(title)\",\"\(description)\",\"\(location)\",\"\(date)\",\"\(userId)\");"
+        let updateStatementString = "INSERT INTO Events ( EventTitle, EventDescription, EventLocation, Date, UserId, userName) VALUES (\"\(title)\",\"\(description)\",\"\(location)\",\"\(date)\",\"\(userId)\",\"\(userName)\");"
         print(updateStatementString)
         var updateStatement: OpaquePointer? = nil
         
@@ -186,7 +205,7 @@ class SqlManager {
                 "eventDescription" : String(cString: sqlite3_column_text(stmt, 2)),
                 "eventLocation" : String(cString: sqlite3_column_text(stmt, 3)),
                 "userId" : String(cString: sqlite3_column_text(stmt, 4)),
-                
+                 "userName" : String(cString: sqlite3_column_text(stmt, 6))
                 ]
             eventData.append(EventModel(event: eventDict ))
         }
@@ -211,7 +230,8 @@ class SqlManager {
                 "eventTitle" : String(cString: sqlite3_column_text(stmt, 1)),
                 "eventDescription" : String(cString: sqlite3_column_text(stmt, 2)),
                 "eventLocation" : String(cString: sqlite3_column_text(stmt, 3)),
-                "userId" : String(cString: sqlite3_column_text(stmt, 4))
+                "userId" : String(cString: sqlite3_column_text(stmt, 4)),
+                "userName" : String(cString: sqlite3_column_text(stmt, 5))
                 
                 ]
             userCreatedEvent.append(EventModel(event: userCreatedDict ))

@@ -14,6 +14,7 @@ class Login: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginViewTitleLable: UILabel!
     let newSqlManager = SqlManager()
+   // let username: String
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +28,15 @@ class Login: UIViewController {
     
     
     @IBAction func loginButton(_ sender: Any) {
-          newSqlManager.createDatabase()
+        newSqlManager.createDatabase()
         let isuservalid = newSqlManager.userLogin(email: emailTextField.text!, password: passwordTextField.text!)
         if isuservalid == true {
             UserDefaults.standard.set(true, forKey: "islogin")
-           navigateToTabBar()
-            print("login successful")
-            
+           // UserDefaults.standard.set(username , forKey: "userName")
+                       navigateToTabBar()
         }
         else {
-            print("Login Unsuccessful")
+           ErrorReporting.showMessage(title: "Login Failed", msg: "Invalid UserName or Password")
         }
     }
 
