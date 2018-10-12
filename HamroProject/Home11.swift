@@ -9,7 +9,7 @@
 import UIKit
 import UserNotifications
 
-class Home: UIViewController {
+class Home111: UIViewController {
     @IBOutlet weak var homeTable: UITableView!
     let newSqlManager = SqlManager()
     var userCreatedEventsArray = [EventModel]()
@@ -17,12 +17,12 @@ class Home: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeTable.delegate = self
-        homeTable.dataSource = self
-        userId = UserDefaults.standard.string(forKey: "userId")
+       // homeTable.delegate = self
+       // homeTable.dataSource = self
+//userId = UserDefaults.standard.string(forKey: "userId")
         userCreatedEventsArray = newSqlManager.getEventDataFromSpecificUser(userId: userId!)
         homeTable.reloadData()
-        UNUserNotificationCenter.current().delegate = self
+       // UNUserNotificationCenter.current().delegate = self
       //  addNotification()
       
      
@@ -84,16 +84,16 @@ extension Home: UNUserNotificationCenterDelegate {
     }
 }
 
-extension Home: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userCreatedEventsArray.count
-    }
-    
+//extension Home: UITableViewDelegate, UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//      //  return userCreatedEventsArray.count
+//    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
-        cell.textLabel?.text = userCreatedEventsArray[indexPath.row].eventDescrip
+       // cell.textLabel?.text = userCreatedEventsArray[indexPath.row].eventDescrip
         return cell
     }
     
     
-}
+

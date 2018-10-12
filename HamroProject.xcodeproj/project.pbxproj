@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9F1C40BA216C8849007A4A6F /* TblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C40B9216C8849007A4A6F /* TblCell.swift */; };
-		9F1C40BC216CACEA007A4A6F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C40BB216CACEA007A4A6F /* Home.swift */; };
+		9F1C40BC216CACEA007A4A6F /* Home11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C40BB216CACEA007A4A6F /* Home11.swift */; };
+		9F9B2ACD216F1A310034D213 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B2ACC216F1A310034D213 /* Login.swift */; };
+		9F9B2ACF216F1A480034D213 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B2ACE216F1A480034D213 /* Register.swift */; };
+		9F9B2AD5216F32D40034D213 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B2AD4216F32D40034D213 /* Home.swift */; };
+		9F9B2AD7216F47BB0034D213 /* PrivateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B2AD6216F47BB0034D213 /* PrivateEvent.swift */; };
+		9F9B2AD9216F48660034D213 /* AddEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B2AD8216F48660034D213 /* AddEvent.swift */; };
+		9F9B2ADB216FB1270034D213 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9B2ADA216FB1270034D213 /* EventCell.swift */; };
 		9FBFFC2C216C4427005DAD88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFC2B216C4427005DAD88 /* AppDelegate.swift */; };
 		9FBFFC2E216C4427005DAD88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFC2D216C4427005DAD88 /* ViewController.swift */; };
 		9FBFFC31216C4427005DAD88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBFFC2F216C4427005DAD88 /* Main.storyboard */; };
@@ -17,11 +23,18 @@
 		9FBFFC41216C471F005DAD88 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FBFFC40216C471F005DAD88 /* libsqlite3.0.tbd */; };
 		9FBFFC43216C48FC005DAD88 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFC42216C48FC005DAD88 /* UserModel.swift */; };
 		9FBFFC64216C5A3F005DAD88 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBFFC62216C5A3F005DAD88 /* EventModel.swift */; };
+		9FC73D1321703DDD0006E6F5 /* All-Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC73D1221703DDD0006E6F5 /* All-Event.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9F1C40B9216C8849007A4A6F /* TblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TblCell.swift; sourceTree = "<group>"; };
-		9F1C40BB216CACEA007A4A6F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9F1C40BB216CACEA007A4A6F /* Home11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home11.swift; sourceTree = "<group>"; };
+		9F9B2ACC216F1A310034D213 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		9F9B2ACE216F1A480034D213 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		9F9B2AD4216F32D40034D213 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		9F9B2AD6216F47BB0034D213 /* PrivateEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateEvent.swift; sourceTree = "<group>"; };
+		9F9B2AD8216F48660034D213 /* AddEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvent.swift; sourceTree = "<group>"; };
+		9F9B2ADA216FB1270034D213 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		9FBFFC28216C4427005DAD88 /* HamroProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HamroProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBFFC2B216C4427005DAD88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBFFC2D216C4427005DAD88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +45,7 @@
 		9FBFFC40216C471F005DAD88 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		9FBFFC42216C48FC005DAD88 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		9FBFFC63216C5A3F005DAD88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/EventModel.swift; sourceTree = "<group>"; };
+		9FC73D1221703DDD0006E6F5 /* All-Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All-Event.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +60,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F9B2AD0216F288E0034D213 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9FBFFC42216C48FC005DAD88 /* UserModel.swift */,
+				9FBFFC62216C5A3F005DAD88 /* EventModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F9B2AD1216F289C0034D213 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F9B2ADA216FB1270034D213 /* EventCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F9B2AD2216F28A80034D213 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9FBFFC2B216C4427005DAD88 /* AppDelegate.swift */,
+				9F9B2ACC216F1A310034D213 /* Login.swift */,
+				9F9B2ACE216F1A480034D213 /* Register.swift */,
+				9F9B2AD4216F32D40034D213 /* Home.swift */,
+				9F9B2AD6216F47BB0034D213 /* PrivateEvent.swift */,
+				9F9B2AD8216F48660034D213 /* AddEvent.swift */,
+				9FC73D1221703DDD0006E6F5 /* All-Event.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F9B2AD3216F28D60034D213 /* SqLiteManager */ = {
+			isa = PBXGroup;
+			children = (
+				9FBFFC3D216C44B7005DAD88 /* SqliteManager.swift */,
+			);
+			path = SqLiteManager;
+			sourceTree = "<group>";
+		};
 		9FBFFC1F216C4426005DAD88 = {
 			isa = PBXGroup;
 			children = (
@@ -66,16 +119,16 @@
 		9FBFFC2A216C4427005DAD88 /* HamroProject */ = {
 			isa = PBXGroup;
 			children = (
-				9FBFFC2B216C4427005DAD88 /* AppDelegate.swift */,
-				9FBFFC2D216C4427005DAD88 /* ViewController.swift */,
+				9F9B2AD3216F28D60034D213 /* SqLiteManager */,
+				9F9B2AD1216F289C0034D213 /* Views */,
+				9F9B2AD2216F28A80034D213 /* Controllers */,
+				9F9B2AD0216F288E0034D213 /* Models */,
 				9FBFFC2F216C4427005DAD88 /* Main.storyboard */,
 				9FBFFC32216C4428005DAD88 /* Assets.xcassets */,
 				9FBFFC37216C4428005DAD88 /* Info.plist */,
-				9FBFFC3D216C44B7005DAD88 /* SqliteManager.swift */,
-				9FBFFC42216C48FC005DAD88 /* UserModel.swift */,
-				9FBFFC62216C5A3F005DAD88 /* EventModel.swift */,
 				9F1C40B9216C8849007A4A6F /* TblCell.swift */,
-				9F1C40BB216CACEA007A4A6F /* Home.swift */,
+				9F1C40BB216CACEA007A4A6F /* Home11.swift */,
+				9FBFFC2D216C4427005DAD88 /* ViewController.swift */,
 			);
 			path = HamroProject;
 			sourceTree = "<group>";
@@ -158,13 +211,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F9B2AD9216F48660034D213 /* AddEvent.swift in Sources */,
 				9FBFFC64216C5A3F005DAD88 /* EventModel.swift in Sources */,
+				9FC73D1321703DDD0006E6F5 /* All-Event.swift in Sources */,
 				9FBFFC3E216C44B7005DAD88 /* SqliteManager.swift in Sources */,
+				9F9B2AD5216F32D40034D213 /* Home.swift in Sources */,
 				9FBFFC2E216C4427005DAD88 /* ViewController.swift in Sources */,
+				9F9B2ACF216F1A480034D213 /* Register.swift in Sources */,
 				9FBFFC43216C48FC005DAD88 /* UserModel.swift in Sources */,
+				9F9B2ADB216FB1270034D213 /* EventCell.swift in Sources */,
 				9F1C40BA216C8849007A4A6F /* TblCell.swift in Sources */,
 				9FBFFC2C216C4427005DAD88 /* AppDelegate.swift in Sources */,
-				9F1C40BC216CACEA007A4A6F /* Home.swift in Sources */,
+				9F1C40BC216CACEA007A4A6F /* Home11.swift in Sources */,
+				9F9B2AD7216F47BB0034D213 /* PrivateEvent.swift in Sources */,
+				9F9B2ACD216F1A310034D213 /* Login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
