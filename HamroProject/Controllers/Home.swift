@@ -10,7 +10,9 @@ import UIKit
 import Alamofire
 
 class Home: UIViewController {
+  //  let in = CheckInternetConnection()
     
+    @IBOutlet weak var nointernet: UILabel!
     @IBOutlet weak var activityIndicatorView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -26,14 +28,24 @@ class Home: UIViewController {
         checkIfLogined()
         homeTable.delegate = self
         homeTable.dataSource = self
-        getData(fromUrl: baseUrl)
+        
+   if  CheckInternetConnection.isConnectedToInternet() {
+         nointernet.text = "Loading"
+            getData(fromUrl: baseUrl)
+   } else {
+    nointernet.text = "No Internet Connection ! "
+    print("no internet ")
+}
+        
         navigationItem.title = UserDefaults.standard.value(forKey: "userName") as? String
           self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]
             }
     
     func getData(fromUrl: String) {
+        
         Alamofire.request(fromUrl, method: .post, parameters: token, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             let responseData = response.result.value as? [String: Any]
+            //print(response)
             let dataOutput = responseData!["output"] as? [String: Any]
             let events = dataOutput!["response"] as? NSArray
             if events != nil {
@@ -103,9 +115,6 @@ extension Home: UITableViewDelegate, UITableViewDataSource {
 
     }
     
-    
-    
-    
-    
+
     
 }

@@ -26,6 +26,7 @@ class Register: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         // self.view!.makeToast("This is a piece of toast", duration: 3.0, position: .bottom, style: nil)
         
         
@@ -48,7 +49,7 @@ class Register: UIViewController {
             } else {
                 newSqlManager.putUserData(firstName: fullNameTextField.text!, lastName: "b", userName: userNameTextField.text!, email: email!, password: passwordTextField.text!)
                 
-               self.view!.makeToast("Regristration Successful. ", duration: 1.0, position: .center)
+             self.view!.makeToast("Regristration Successful. ", duration: 1.0, position: .center)
                 //dismiss(animated: true, completion: nil)
                 //  ErrorReporting.showMessage(title: "Regristration Successful! ", msg: "You can now login")
                 

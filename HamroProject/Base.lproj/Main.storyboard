@@ -168,7 +168,18 @@
                             </tableView>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oXn-4b-RDz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afC-BZ-YT0">
+                                        <rect key="frame" x="165" y="214.5" width="45.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                        <color key="textColor" red="0.53564205269999998" green="0.53305440989999997" blue="0.53822969539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="afC-BZ-YT0" firstAttribute="centerX" secondItem="oXn-4b-RDz" secondAttribute="centerX" id="pdU-4I-GAf"/>
+                                </constraints>
                             </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4MA-3l-dTL">
                                 <rect key="frame" x="157.5" y="311" width="60" height="60"/>
@@ -188,6 +199,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="oXn-4b-RDz" secondAttribute="trailing" constant="-16" id="aMD-OH-IaW"/>
                             <constraint firstItem="oXn-4b-RDz" firstAttribute="leading" secondItem="Yaz-jr-WAn" secondAttribute="leadingMargin" constant="-16" id="gZj-jL-iSk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fv3-mb-lRy" secondAttribute="trailing" constant="-16" id="pHD-Wd-Ovs"/>
+                            <constraint firstItem="4MA-3l-dTL" firstAttribute="top" secondItem="afC-BZ-YT0" secondAttribute="bottom" constant="15" id="rRd-l6-6Zw"/>
                             <constraint firstItem="oXn-4b-RDz" firstAttribute="top" secondItem="UfU-Lt-Vez" secondAttribute="bottom" id="sbh-xM-RW9"/>
                             <constraint firstItem="bPD-Gd-Y4p" firstAttribute="top" secondItem="Fv3-mb-lRy" secondAttribute="bottom" id="xsp-aR-Kba"/>
                             <constraint firstItem="4MA-3l-dTL" firstAttribute="centerX" secondItem="oXn-4b-RDz" secondAttribute="centerX" id="zSn-hH-tGw"/>
@@ -205,6 +217,7 @@
                         <outlet property="activityIndicator" destination="4MA-3l-dTL" id="vyX-T2-P9c"/>
                         <outlet property="activityIndicatorView" destination="oXn-4b-RDz" id="4jB-Wf-Qrl"/>
                         <outlet property="homeTable" destination="Fv3-mb-lRy" id="TGx-nd-NK1"/>
+                        <outlet property="nointernet" destination="afC-BZ-YT0" id="aLP-FQ-IRf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4y-F2-PBN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -261,7 +274,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqa-6i-3JW">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="event description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqa-6i-3JW">
                                                             <rect key="frame" x="0.0" y="32.5" width="133.5" height="23"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="13"/>
                                                             <nil key="textColor"/>
@@ -314,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwr-h4-4oT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3951" y="116"/>
+            <point key="canvasLocation" x="4888.8000000000002" y="115.59220389805098"/>
         </scene>
         <!--Add Event-->
         <scene sceneID="cKz-cE-mGN">
@@ -400,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qWc-Rz-Um0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4785" y="116"/>
+            <point key="canvasLocation" x="5724" y="115.59220389805098"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DBc-zq-Tis">
@@ -418,6 +431,7 @@
                         <segue destination="60W-7L-0AW" kind="relationship" relationship="viewControllers" id="GhR-d8-teM"/>
                         <segue destination="ZZR-Gf-NOI" kind="relationship" relationship="viewControllers" id="2G2-kg-u8g"/>
                         <segue destination="dwO-bI-JSS" kind="relationship" relationship="viewControllers" id="FJS-XT-2W9"/>
+                        <segue destination="d44-hv-q4V" kind="relationship" relationship="viewControllers" id="J1O-YY-0gm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkI-Q6-NEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -503,7 +517,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="x6Z-dn-OJ6" firstAttribute="top" secondItem="W5U-HD-2Sm" secondAttribute="bottom" constant="30" id="1IF-K7-4JQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Fit-gK-Wsd" secondAttribute="trailing" constant="10" id="2Uj-Wg-j5P"/>
@@ -624,7 +638,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZnI-o3-Z7A" firstAttribute="leading" secondItem="eMS-3Y-yLQ" secondAttribute="leading" constant="20" id="FNC-6G-wxu"/>
                             <constraint firstItem="fvi-yG-Rt0" firstAttribute="centerY" secondItem="eMS-3Y-yLQ" secondAttribute="centerY" id="HQQ-x8-KFC"/>
@@ -670,7 +684,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xx-HH-jpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3100" y="116"/>
+            <point key="canvasLocation" x="4039.1999999999998" y="115.59220389805098"/>
         </scene>
         <!--Home-->
         <scene sceneID="Suf-NL-pfi">
@@ -713,11 +727,55 @@
             </objects>
             <point key="canvasLocation" x="-378" y="1069"/>
         </scene>
+        <!--Me-->
+        <scene sceneID="TIo-VE-3bz">
+            <objects>
+                <viewController storyboardIdentifier="Profile" id="3YN-dt-x7W" customClass="Profile" customModule="HamroProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hl5-dD-bGf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yhs-wz-IjE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dYk-hN-jlo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Me" id="jk9-Cx-Xts">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="tmG-F9-8vI">
+                            <color key="tintColor" red="0.53564205269999998" green="0.53305440989999997" blue="0.53822969539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWG-Rl-2Yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2844" y="536.58170914542734"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="nIL-R5-LFS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d44-hv-q4V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" image="ic_profile_grey" id="nsO-cd-O2Y"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QgH-De-PLS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.53564205269999998" green="0.53305440989999997" blue="0.53822969539999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3YN-dt-x7W" kind="relationship" relationship="rootViewController" id="qZW-ze-CgZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJG-tk-1DR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904.8" y="536.58170914542734"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_favorites_grey" width="24" height="24"/>
         <image name="ic_favorites_orange" width="24" height="24"/>
         <image name="ic_home_orange" width="24" height="24"/>
+        <image name="ic_profile_grey" width="24" height="24"/>
         <image name="ic_search_white" width="24" height="24"/>
     </resources>
 </document>

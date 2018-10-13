@@ -12,7 +12,6 @@ class PrivateEvent: UIViewController {
     @IBOutlet weak var tbl: UITableView!
     let newSqlManager = SqlManager()
     
-
     var userCreatedEventsArray = [EventModel]() {
         didSet {
             tbl.reloadData()
@@ -28,6 +27,7 @@ class PrivateEvent: UIViewController {
         
     self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]
     }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -66,6 +66,28 @@ extension PrivateEvent: UITableViewDelegate, UITableViewDataSource {
               return eventCell!
       
     }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            self.tbl.dataSource?.tableView!(self.tbl, commit: .delete, forRowAt: indexPath)
+            return
+        }
+        deleteButton.backgroundColor = UIColor.black
+        return [deleteButton]
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            let id = userCreatedEventsArray[indexPath.row].eventId
+             newSqlManager.delelteEventById(Id: id!)
+ 
+//            PersistenceService.context.delete(users[indexPath.row])
+            userCreatedEventsArray.remove(at: indexPath.row)
+//            PersistenceService.saveContext()
+           
+        }
+    }
+    
     
     
 }

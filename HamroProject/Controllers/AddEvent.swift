@@ -21,6 +21,7 @@ class AddEvent: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         userId = UserDefaults.standard.value(forKey: "userId") as? String
         userName = UserDefaults.standard.value(forKey: "userName") as? String
           self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]

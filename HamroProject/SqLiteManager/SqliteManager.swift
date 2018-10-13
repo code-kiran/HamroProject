@@ -92,20 +92,20 @@ class SqlManager {
         return userData
     }
 
-    func delelteEventById(Id: String) {
-        createDatabase()
-        var stmt:OpaquePointer?
-        let queryString = "DELETE FROM Users WHERE Id = \(Id);"
-        
-        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error preparing insert: \(errmsg)")
-        }
-        while(sqlite3_step(stmt) == SQLITE_ROW){
-        
-        }
-        
-    }
+//    func delelteEventById(Id: String) {
+//        createDatabase()
+//        var stmt:OpaquePointer?
+//        let queryString = "DELETE FROM Users WHERE Id = \(Id);"
+//
+//        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+//            let errmsg = String(cString: sqlite3_errmsg(db)!)
+//            print("error preparing insert: \(errmsg)")
+//        }
+//        while(sqlite3_step(stmt) == SQLITE_ROW){
+//
+//        }
+//
+//    }
     
     
     //login
@@ -237,6 +237,23 @@ class SqlManager {
         }
         return userCreatedEvent
     }
+    
+    func delelteEventById(Id: String) {
+        let deleteStatementStirng = "DELETE FROM Events WHERE Id = '\(Id)';"
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted row.")
+            } else {
+                print("Could not delete row.")
+            }
+        } else {
+            print("DELETE statement could not be prepared")
+        }
+        
+        sqlite3_finalize(deleteStatement)
+    }
+
     
     
     }
