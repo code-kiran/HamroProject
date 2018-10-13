@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -534,6 +535,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvi-yG-Rt0" userLabel="toastView">
+                                <rect key="frame" x="20" y="269.5" width="335" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="335" id="8ym-40-QGY"/>
+                                    <constraint firstAttribute="height" constant="128" id="ntc-HO-5qc"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZnI-o3-Z7A">
                                 <rect key="frame" x="20" y="158.5" width="335" height="350"/>
                                 <subviews>
@@ -618,6 +627,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZnI-o3-Z7A" firstAttribute="leading" secondItem="eMS-3Y-yLQ" secondAttribute="leading" constant="20" id="FNC-6G-wxu"/>
+                            <constraint firstItem="fvi-yG-Rt0" firstAttribute="centerY" secondItem="eMS-3Y-yLQ" secondAttribute="centerY" id="HQQ-x8-KFC"/>
+                            <constraint firstItem="fvi-yG-Rt0" firstAttribute="centerX" secondItem="eMS-3Y-yLQ" secondAttribute="centerX" id="LuN-hg-8yh"/>
                             <constraint firstItem="wON-pZ-mw8" firstAttribute="top" secondItem="94n-ZY-Zdv" secondAttribute="bottom" constant="20" id="NFY-q9-Szo"/>
                             <constraint firstItem="ZnI-o3-Z7A" firstAttribute="centerY" secondItem="eMS-3Y-yLQ" secondAttribute="centerY" id="NYl-mB-VLs"/>
                             <constraint firstAttribute="trailing" secondItem="ZnI-o3-Z7A" secondAttribute="trailing" constant="20" id="djj-VE-QgL"/>
@@ -632,6 +643,7 @@
                         <outlet property="emailTextField" destination="JI7-V5-8I2" id="Cxx-gP-Z75"/>
                         <outlet property="fullNameTextField" destination="wON-pZ-mw8" id="pmJ-hB-IHJ"/>
                         <outlet property="passwordTextField" destination="Z8a-Bb-YCN" id="C5G-Wh-OT4"/>
+                        <outlet property="toastView" destination="fvi-yG-Rt0" id="Vqz-wZ-uwH"/>
                         <outlet property="userNameTextField" destination="O5Z-RU-Rwn" id="ZoY-Vl-PsV"/>
                     </connections>
                 </viewController>

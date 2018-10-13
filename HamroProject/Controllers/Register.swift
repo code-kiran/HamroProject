@@ -8,21 +8,25 @@
 
 import UIKit
 import SQLite3
-
+import Toast_Swift
 
 
 class Register: UIViewController {
     let newSqlManager = SqlManager()
+    
+    
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var conformPasswordTextField: UITextField!
+    @IBOutlet weak var toastView: UIView!
     
       var successMessage : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // self.view!.makeToast("This is a piece of toast", duration: 3.0, position: .bottom, style: nil)
         
         
     }
@@ -43,7 +47,9 @@ class Register: UIViewController {
                 ErrorReporting.showMessage(title: "Invalid Email", msg: "Email Already Exist ")
             } else {
                 newSqlManager.putUserData(firstName: fullNameTextField.text!, lastName: "b", userName: userNameTextField.text!, email: email!, password: passwordTextField.text!)
-                dismiss(animated: true, completion: nil)
+                
+               self.view!.makeToast("Regristration Successful. ", duration: 1.0, position: .center)
+                //dismiss(animated: true, completion: nil)
                 //  ErrorReporting.showMessage(title: "Regristration Successful! ", msg: "You can now login")
                 
             }

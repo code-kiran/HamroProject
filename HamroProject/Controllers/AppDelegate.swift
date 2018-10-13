@@ -19,33 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
                let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
              print(urls[urls.count-1] as URL)
-        //        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { (success, error) in
-        //            if error != nil {
-        //                print("authorisation unsuccess")
-        //            } else {
-        //                print("authorization successful")
-        //            }
-        //        }
-      //  if UserDefaults.standard.string(forKey: "userEmail")
-         //   == nil {
-   /*
-        if islogin == 1{
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! Login
-            let navigationController = UINavigationController(rootViewController: newViewController)
-            let appdelegate = UIApplication.shared.delegate as! AppDelegate
-            appdelegate.window!.rootViewController = navigationController
-            
-            
-        } else {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
-            let navigationController = UINavigationController(rootViewController: newViewController)
-            let appdelegate = UIApplication.shared.delegate as! AppDelegate
-            appdelegate.window!.rootViewController = navigationController
-        }
- */
-        
+ 
         return true
         
     }

@@ -91,23 +91,22 @@ class SqlManager {
         }
         return userData
     }
+
+    func delelteEventById(Id: String) {
+        createDatabase()
+        var stmt:OpaquePointer?
+        let queryString = "DELETE FROM Users WHERE Id = \(Id);"
+        
+        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
+            let errmsg = String(cString: sqlite3_errmsg(db)!)
+            print("error preparing insert: \(errmsg)")
+        }
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+        
+        }
+        
+    }
     
-    
-//    func getUsernameFromUserId(userId: String) -> String {
-//           var stmt:OpaquePointer?
-//        var username: String?
-//        createDatabase()
-//        let queryString = "SELECT FirstName FROM Users WHERE Id = \(userId);"
-//
-//        if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK {
-//            let errmsg = String(cString: sqlite3_errmsg(db)!)
-//            print("error preparing insert: \(errmsg)")
-//        }
-//        while(sqlite3_step(stmt) == SQLITE_ROW) {
-//            username = String(cString: sqlite3_column_text(stmt, 2))
-//            }
-//        return username!
-//    }
     
     //login
     
