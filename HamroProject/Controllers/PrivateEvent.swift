@@ -17,17 +17,17 @@ class PrivateEvent: UIViewController {
             tbl.reloadData()
         }
     }
-
-
+    
+    
     // var userCreatedEventsArray = [EventModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tbl.delegate = self
         tbl.dataSource = self
         
-    self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Menlo", size: 18)!]
     }
-
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -37,19 +37,19 @@ class PrivateEvent: UIViewController {
     }
     
     
-override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    let userId =  UserDefaults.standard.value(forKey: "userId") as? String
-    userCreatedEventsArray = newSqlManager.getEventDataFromSpecificUser(userId: userId!)
-}
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let userId =  UserDefaults.standard.value(forKey: "userId") as? String
+        userCreatedEventsArray = newSqlManager.getEventDataFromSpecificUser(userId: userId!)
+    }
+    
     @IBAction func gotoAddEventVC(_ sender: Any) {
         if  let vc = storyboard?.instantiateViewController(withIdentifier: "AddEvent") as? AddEvent {
-        self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-
+    
     
 }
 
@@ -59,12 +59,12 @@ extension PrivateEvent: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let eventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? EventCell
-            eventCell?.eventTitleLable.text = userCreatedEventsArray[indexPath.row].eventName
-            eventCell?.eventDescLable.text = userCreatedEventsArray[indexPath.row].eventDescrip
-            eventCell?.eventCreatedByLable.text = userCreatedEventsArray[indexPath.row].eventLocation
-              return eventCell!
-      
+        let eventCell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as? EventCell
+        eventCell?.eventTitleLable.text = userCreatedEventsArray[indexPath.row].eventName
+        eventCell?.eventDescLable.text = userCreatedEventsArray[indexPath.row].eventDescrip
+        eventCell?.eventCreatedByLable.text = userCreatedEventsArray[indexPath.row].eventLocation
+        return eventCell!
+        
     }
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteButton = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
@@ -79,12 +79,9 @@ extension PrivateEvent: UITableViewDelegate, UITableViewDataSource {
         if editingStyle == .delete {
             print("Deleted")
             let id = userCreatedEventsArray[indexPath.row].eventId
-             newSqlManager.delelteEventById(Id: id!)
- 
-//            PersistenceService.context.delete(users[indexPath.row])
+            newSqlManager.delelteEventById(Id: id!)
             userCreatedEventsArray.remove(at: indexPath.row)
-//            PersistenceService.saveContext()
-           
+            
         }
     }
     
