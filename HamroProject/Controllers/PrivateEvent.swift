@@ -71,7 +71,7 @@ extension PrivateEvent: UITableViewDelegate, UITableViewDataSource {
             self.tbl.dataSource?.tableView!(self.tbl, commit: .delete, forRowAt: indexPath)
             return
         }
-        deleteButton.backgroundColor = UIColor.black
+        deleteButton.backgroundColor = UIColor.lightGray
         return [deleteButton]
     }
     

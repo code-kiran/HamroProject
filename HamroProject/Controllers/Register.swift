@@ -10,8 +10,12 @@ import UIKit
 import SQLite3
 import Toast_Swift
 
+protocol RegristerSuccessDelegate {
+    func isRegristerSuccess (message: String, color: UIColor)
+}
 
 class Register: UIViewController {
+    var regristrationSuccessDelegate: RegristerSuccessDelegate!
     let newSqlManager = SqlManager()
     
     
@@ -48,11 +52,9 @@ class Register: UIViewController {
                 ErrorReporting.showMessage(title: "Invalid Email", msg: "Email Already Exist ")
             } else {
                 newSqlManager.putUserData(firstName: fullNameTextField.text!, lastName: "b", userName: userNameTextField.text!, email: email!, password: passwordTextField.text!)
-                
-             self.view!.makeToast("Regristration Successful. ", duration: 1.0, position: .center)
-                //dismiss(animated: true, completion: nil)
-                //  ErrorReporting.showMessage(title: "Regristration Successful! ", msg: "You can now login")
-                
+                regristrationSuccessDelegate.isRegristerSuccess(message: "Regristratiion Successful . Please Login !", color: .lightGray)
+          //   self.view!.makeToast("Regristration Successful. ", duration: 1.0, position: .center)
+                dismiss(animated: true, completion: nil)                
             }
         }
     }

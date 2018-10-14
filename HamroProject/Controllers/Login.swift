@@ -44,6 +44,7 @@ class Login: UIViewController {
     
     @IBAction func signUpButton(_ sender: Any) {
         if let destinationVC = storyboard?.instantiateViewController(withIdentifier: "Register") as? Register  {
+            destinationVC.regristrationSuccessDelegate = self as? RegristerSuccessDelegate
        self.present(destinationVC, animated: true, completion: nil)
         }
     }
@@ -53,5 +54,19 @@ class Login: UIViewController {
             self.present(tabbar, animated: true, completion: nil)
         }
     }
+
     
 }
+
+extension Login: RegristerSuccessDelegate {
+    func isRegristerSuccess(message: String, color: UIColor) {
+        loginViewTitleLable.textColor = UIColor.white
+        loginViewTitleLable.text = message
+        view.backgroundColor = color
+    }
+    
+    }
+    
+    
+    
+
